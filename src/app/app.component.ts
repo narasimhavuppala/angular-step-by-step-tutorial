@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, ViewChild } from '@angular/core';
+import { UserService } from './user.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-  title = 'hello-world-training';
+  title = 'hello-world-training--Sathivk';
+  userid="";
+  @ViewChild("myform")  form:any;
+
+  constructor(private userService: UserService){}
+
+  handleSubmit(){
+     console.log(this.userid);
+     this.userService.getUserDetails(this.userid).subscribe(res=>{
+       console.log(res);
+     })
+  }
+
 }
