@@ -8,7 +8,7 @@ import { UserService } from './user.service';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-  title = 'hello-world-training--Sathivk';
+  title = 'User Details Search';
   userid="";
   @ViewChild("myform")  form:any;
 

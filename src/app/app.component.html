@@ -1,7 +1,24 @@
 <h1>{{title}}</h1>
 
-<form novalidate  (ngSubmit)="handleSubmit()"  #myform="ngForm">
-  <label>Enter user id:</label>
-  <input  type="text" name="demo" placeholder="demo" [(ngModel)]="userid">
-  <button type="submit">Submit </button>
-</form>
+<div class="col-md-6">
+
+  <form novalidate (ngSubmit)="handleSubmit()" #myform="ngForm">
+
+    <div class="form-group">
+      <label for="usersearchid">Enter User Id:</label>
+      <input id="usersearchid" class="form-control" type="text" name="demo" placeholder="1" ngModel  required="true" minlength="10">
+
+    </div>
+
+    <br />
+    <div class="form-group">
+
+      <button type="submit" class="btn btn-primary">Submit </button>
+
+    </div>
+
+  </form>
+
+  {{myform.value|json}}
+
+</div>
